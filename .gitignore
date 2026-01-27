@@ -1,0 +1,34 @@
+# Visual Studio / .NET
+.vs/
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug*/
+[Rr]elease*/
+TestResult*/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDE
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Packaging
+*.nupkg
+*.snupkg
+
+# Logs
+*.log
+
+# Publish outputs (optional)
+# Uncomment if you don't want to include publish artifacts
+# publish/
