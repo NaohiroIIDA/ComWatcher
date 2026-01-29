@@ -32,5 +32,8 @@ ComWatcher は、USB シリアル（COM）ポートの追加・削除を監視�
 - 完全な単一 EXE を目指す場合、WPF の衛星アセンブリ（多言語リソース）を含めない設定にしています（`SatelliteResourceLanguages=en`）。これにより EXE 単体での配布がしやすくなります。
 - 多言語リソースが必要な場合は、`publish` フォルダを丸ごと配布してください。
 
+## 配布方法
+エンドユーザー向けの配布手順については、[docs/DISTRIBUTION_ja.md](docs/DISTRIBUTION_ja.md) を参照してください。
+
 ## ライセンス
-未設定（必要に応じて追加してください）。
+このプロジェクトは MIT ライセンスの下で公開されています。詳細は [LICENSE](LICENSE) ファイルを参照してください。

@@ -33,5 +33,8 @@ Artifacts will be in:
 - Single-file publish may still require satellite assemblies for UI localization; this release uses English-only (`SatelliteResourceLanguages=en`) so the EXE should work standalone.
 - If you prefer multi-language UI resources, publish the entire folder and keep language subfolders (e.g., `ja`).
 
+## Distribution
+For end-user distribution instructions, see [docs/DISTRIBUTION.md](docs/DISTRIBUTION.md).
+
 ## License
-Specify your preferred license (e.g., MIT). If you want, I can add a `LICENSE` file.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

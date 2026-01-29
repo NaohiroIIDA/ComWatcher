@@ -32,3 +32,9 @@ Thumbs.db
 # Publish outputs (optional)
 # Uncomment if you don't want to include publish artifacts
 # publish/
+
+# Build artifacts
+*.zip
+
+# Claude Code
+.claude/
