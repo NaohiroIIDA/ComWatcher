@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;                 // SystemIcons
@@ -12,7 +12,7 @@ using System.Windows.Threading;
 
 using Forms = System.Windows.Forms;
 
-namespace ComWatcher
+namespace ComPortWatcher
 {
     public partial class MainWindow : Window
     {
@@ -68,7 +68,7 @@ namespace ComWatcher
                 {
                     var logPath = System.IO.Path.Combine(
                         System.IO.Path.GetTempPath(),
-                        "ComWatcher_error.log"
+                        "ComPortWatcher_error.log"
                     );
                     System.IO.File.AppendAllText(logPath, $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} Error: {ex}\n");
                 }
@@ -157,7 +157,7 @@ namespace ComWatcher
         {
             try
             {
-                var logPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "ComWatcher_error.log");
+                var logPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "ComPortWatcher_error.log");
                 System.IO.File.AppendAllText(logPath, $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} {message}\n");
             }
             catch { }

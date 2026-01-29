@@ -1,8 +1,8 @@
-﻿using System.Configuration;
+using System.Configuration;
 using System.Data;
 using System.Windows;
 
-namespace ComWatcher;
+namespace ComPortWatcher;
 
 /// <summary>
 /// Interaction logic for App.xaml
@@ -48,10 +48,11 @@ public partial class App : System.Windows.Application
     {
         try
         {
-            var logPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "ComWatcher_error.log");
+            var logPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "ComPortWatcher_error.log");
             System.IO.File.AppendAllText(logPath, $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} {message}\n");
         }
         catch { }
     }
 }
+
 
