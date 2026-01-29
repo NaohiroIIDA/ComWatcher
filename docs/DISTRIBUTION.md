@@ -1,30 +1,32 @@
-# ComWatcher - Distribution Package
+# COM Watcher - 配布パッケージ
 
-## Contents
-- `ComWatcher.exe` - Main program
-- `*.dll` - Required WPF runtime libraries
+[English](DISTRIBUTION_en.md) | 日本語
 
-## Installation
-1. Extract the ZIP file
-2. Run `ComWatcher.exe`
-3. The app will start minimized in the system tray
-4. USB-Serial ports will be automatically detected and notified
+## 内容物
+- `ComWatcher.exe` - メインプログラム
+- `*.dll` - WPF実行に必要なライブラリ
 
-## System Requirements
-- Windows 10/11 (64-bit)
-- No .NET Runtime required (self-contained)
+## 使い方
+1. ZIPファイルを展開
+2. ComWatcher.exe を実行
+3. システムトレイに常駐します
+4. USB-SerialポートがPCに接続されると自動検出・通知されます
 
-## Notes
-- Windows Defender may show a warning on first run
-- Keep the EXE and DLLs in the same folder
-- To uninstall: Simply delete the folder
+## 動作要件
+- Windows 10/11 (64bit)
+- .NET ランタイム不要（全て同梱）
 
-## Tray Icon Controls
-- **Left click** - Show window
-- **Right click** - Show menu (Exit)
+## 注意事項
+- 初回実行時にWindows Defenderの警告が出る場合があります
+- exeとdllは同じフォルダに配置してください
+- アンインストール: フォルダごと削除するだけでOK
 
-## Features
-- Automatic detection of USB-Serial ports (Arduino, etc.)
-- Balloon notification when ports are added
-- Device name and VID/PID display
-- Most recently connected port appears at the top
+## トレイアイコン操作
+- **左クリック** - ウィンドウ表示
+- **右クリック** - メニュー表示（終了）
+
+## 機能
+- USB-Serialポート（Arduino等）の自動検出
+- ポート追加時のバルーン通知
+- デバイス名・VID/PID表示
+- 最後に接続されたポートを一番上に表示

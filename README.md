@@ -1,40 +1,41 @@
 # ComWatcher
 
-COM Watcher is a lightweight Windows tray application (WPF, .NET 8) that monitors serial (COM) ports and notifies you when devices are added or removed. It focuses on USB serial devices and shows friendly names and VID/PID when available.
+[English](README_en.md) | 日本語
 
-## Features
-- Tray-resident COM port monitor (window hidden at startup)
-- 1-second polling with diff detection (added/removed)
-- USB serial filtering, friendly name display, VID/PID extraction
-- Toast balloon on addition (removal toast optional)
-- Robust acquisition using WMI with SerialPort fallback
+ComWatcher は、USB シリアル（COM）ポートの追加・削除を監視し、トレイ通知で知らせる軽量な Windows トレイ常駐アプリ（WPF, .NET 8）です。WMI を用いた取得と `SerialPort` によるフォールバックで、安定してポート情報を表示します。
 
-## Build
-- Prerequisites: .NET 8 SDK, Windows 10/11
-- Build & publish (single-file, self-contained, English resources only):
+## 特長
+- 起動時はウィンドウを表示せずトレイ常駐
+- 1秒間隔で監視し、追加/削除の差分を検出
+- USB シリアルに限定して一覧表示（デバイス名・VID/PID を表示）
+- 追加時にトレイバルーン通知（削除通知は任意で有効化可能）
+- WMI 取得＋`SerialPort.GetPortNames()` フォールバックで堅牢
+
+## 使い方
+1. `ComWatcher.exe` を起動（トレイに常駐）
+2. トレイアイコン 左クリック: ウィンドウ表示 / 右クリック: メニュー（表示 / 終了）
+3. 一覧は USB シリアル COM ポートのみを表示し、最後に挿したポートが一番上に並びます
+
+## ビルド / 発行
+- 必要環境: .NET 8 SDK, Windows 10/11
+- 単一ファイル・自己完結・英語リソースのみで発行（EXE 単体配布向け）:
 
 ```powershell
-# from the ComWatcher project directory
+# プロジェクトディレクトリで実行
  dotnet publish ComWatcher.csproj -c Release -r win-x64 -p:PublishSingleFile=true -p:SelfContained=true -p:SatelliteResourceLanguages=en
 ```
 
-Artifacts will be in:
+生成物は次のディレクトリに出力されます:
 ```
 ./bin/Release/net8.0-windows/win-x64/publish/
 ```
 
-## Usage
-- Run `ComWatcher.exe` (starts in the system tray)
-- Left click tray icon: show window
-- Right click tray icon: menu (Show, Exit)
-- The list shows USB serial COM ports; the most recently inserted appears at the top
+注記:
+- 完全な単一 EXE を目指す場合、WPF の衛星アセンブリ（多言語リソース）を含めない設定にしています（`SatelliteResourceLanguages=en`）。これにより EXE 単体での配布がしやすくなります。
+- 多言語リソースが必要な場合は、`publish` フォルダを丸ごと配布してください。
 
-## Notes
-- Single-file publish may still require satellite assemblies for UI localization; this release uses English-only (`SatelliteResourceLanguages=en`) so the EXE should work standalone.
-- If you prefer multi-language UI resources, publish the entire folder and keep language subfolders (e.g., `ja`).
+## 配布方法
+エンドユーザー向けの配布手順については、[docs/DISTRIBUTION.md](docs/DISTRIBUTION.md) を参照してください。
 
-## Distribution
-For end-user distribution instructions, see [docs/DISTRIBUTION.md](docs/DISTRIBUTION.md).
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## ライセンス
+このプロジェクトは MIT ライセンスの下で公開されています。詳細は [LICENSE](LICENSE) ファイルを参照してください。
